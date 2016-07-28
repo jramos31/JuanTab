@@ -1,0 +1,177 @@
+/*
+ *
+ * Name: JuanTab
+ * Version: 1.0
+ * Author: Jean Ramos
+ * Contact: http://jean-ramos.com/
+ *
+ */
+
+@font-face {
+    font-family: "weather";
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("icons.css");
+
+/* ***** General ***** */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica;
+    text-shadow: 1px 1px #000000;
+    color: #fff;
+    background-image: url("https://source.unsplash.com/random");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://source.unsplash.com/random");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+main {
+    padding: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.custom-input {
+    color: #ffffff;
+    background-color: transparent;
+    text-align: center;
+    display: inline-block;
+    width: 350px;
+    border: none;
+    border-bottom: solid #fff 2px;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 5px;
+}
+
+.custom-input:focus {
+    outline: none;
+}
+
+/* ***** Top Section ***** */
+
+.top-section {
+    margin-top: 5%;
+}
+
+.top-section input {
+    margin-top: 40px;
+}
+
+#time {
+    font-size: 75px;
+    font-weight: 800;
+    line-height: 60px;
+    margin-bottom: 8px;
+}
+
+#date {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* Quote */
+
+#quote {
+    margin-top: 100px;
+}
+
+#quote p:first-of-type {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#quote p:last-of-type {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+/* ***** Bottom Section ***** */
+
+.bottom-section {
+    padding: 50px 0;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Twitter Trending Topics */
+
+#twitter-section ul {
+    list-style-type: none;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#twitter-section li {
+    margin-right: 10px;
+}
+
+#twitter-section a {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Weather */
+#weather-section {
+    text-transform: uppercase;
+    right: 50px;
+}
+
+#weather-section h2 {
+    font-size: 40px;
+}
+
+#weather-section h2 i {
+    font-family: weather;
+    font-size: 65px;
+    font-style: normal;
+    line-height: 62px;
+    margin-right: 20px;
+}
+
+#weather-section li {
+    font-size: 15px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#weather-section li i {
+    color: #ffffff;
+    font-family: weather;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 5px;
+}
+
+#weather-section p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#clear-zip {
+    font-size: 12px;
+    bottom: 3%;
+    position: fixed;
+    right: 175px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
