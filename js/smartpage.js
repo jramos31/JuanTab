@@ -38,6 +38,7 @@ function getTrend() {
 function weatherCheck() {
     $("#weather-section form").hide();
     $("#clear-zip").hide();
+    $("#current-location").hide();
 
     if (localStorage.getItem('cacheZip') != null) {
         var zip = localStorage.getItem('cacheZip');
@@ -64,8 +65,10 @@ function loadWeather(location, woeid) {
             html += '<li> <i class="icon-'+ weather.forecast[2].code+'"></i>'+weather.forecast[2].day+': '+weather.forecast[2].high+ '&#8457'+ '</li>';
             html += '<li> <i class="icon-'+ weather.forecast[3].code+'"></i>'+weather.forecast[3].day+': '+weather.forecast[3].high+ '&#8457'+ '</li>';
             html += '<p>'+weather.city+', '+weather.region+'</p>';
-            $("#weather-section").html(html);
+            $("#weather-section form").hide();
+            $("#weather-section div").append(html);
             $("#clear-zip").show();
+            $("#current-location").show();
         },
         fail: function error() {
             $("#weather-section").html('<p>ERROR</p>');
@@ -76,8 +79,10 @@ function loadWeather(location, woeid) {
 $("#weather-section form").submit(function(event) {
     event.preventDefault();
     var zipcode = $("#weather-section form input").val();
+    localStorage.clear();
     loadWeather(zipcode);
     saveZipLocally(zipcode);
+    location.reload();
 });
 
 function saveZipLocally(zip) {
@@ -85,6 +90,13 @@ function saveZipLocally(zip) {
 }
 
 $("#clear-zip").on("click", function() {
+    $("#weather-section div").empty();
+    $("#clear-zip").hide();
+    $("#current-location").hide();
+    $("#weather-section form").show();
+});
+
+$("#current-location").on("click", function() {
     localStorage.clear();
     location.reload();
 });

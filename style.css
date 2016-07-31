@@ -165,13 +165,20 @@ ul {
     margin-top: 5px;
 }
 
-#clear-zip {
-    font-size: 12px;
-    bottom: 3%;
+.bottom-buttons {
+    font-size: 11px;
+    bottom: 4%;
     position: fixed;
-    right: 175px;
     background: none;
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+#clear-zip {
+    right: 235px;
+}
+
+#current-location {
+    right: 105px;
 }
