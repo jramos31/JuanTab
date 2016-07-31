@@ -24,7 +24,7 @@
                     <div id="time"></div>
                     <div id="date"></div>
                     <form method="get" action="http://www.google.com/search">
-                        <input type="text" name="q" placeholder="Your wish is my command" class="custom-input" autocomplete="off" />
+                        <input type="text" name="q" placeholder="Just Google it" class="custom-input" autocomplete="off" autofocus />
                         <input type="submit" class="hidden" value="Search" />
                     </form>
                     <p id="quote"></p>
@@ -45,8 +45,10 @@
                             <input name="zipcode" value="" type="text" class="custom-input" placeholder="Enter zip code for and press enter to view weather" />
                             <input type="submit" class="hidden" value="" />
                         </form>
+                        <div></div>
                     </section>
-                    <button id="clear-zip">Change Location</button>
+                    <button id="clear-zip" class="bottom-buttons">Change Location</button>
+                    <button id="current-location" class="bottom-buttons">Use Current Location</button>
                 </div>
             </div>
         </main>
