@@ -28,7 +28,7 @@ function getTrend() {
 
     var trendURL = "http://api.whatthetrend.com/api/v2/trends.json"
     $.getJSON(trendURL, function(data) {
-        for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < 6; i++) {
             var twitterTrend = data.trends[i].name;
             var twitterTrendFirstChar = twitterTrend.charAt(0);
             if (twitterTrendFirstChar === "#") {
