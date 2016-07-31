@@ -28,8 +28,15 @@ function getTrend() {
 
     var trendURL = "http://api.whatthetrend.com/api/v2/trends.json"
     $.getJSON(trendURL, function(data) {
-        for (var i = 0; i < 6; i++) {
-            $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+data.trends[i].name+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
+        for (var i = 0; i < 7; i++) {
+            var twitterTrend = data.trends[i].name;
+            var twitterTrendFirstChar = twitterTrend.charAt(0);
+            if (twitterTrendFirstChar === "#") {
+                var twitterTrendWOFirstChar = twitterTrend.substring(1);
+                $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+twitterTrendWOFirstChar+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
+            } else {
+                $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+data.trends[i].name+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
+            }
         };
     })
     return false;
