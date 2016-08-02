@@ -16,6 +16,9 @@ function startTime() {
     var t = setTimeout(startTime, 500);
 }
 
+var images = ['https://source.unsplash.com/user/flizphotos', 'https://source.unsplash.com/random'];
+$('body').css({'background-image':'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('+images[Math.floor(Math.random()*images.length)]+')'});
+
 function getQuote() {
     $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=",
     function(data) {
@@ -28,7 +31,7 @@ function getTrend() {
 
     var trendURL = "http://api.whatthetrend.com/api/v2/trends.json"
     $.getJSON(trendURL, function(data) {
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 8; i++) {
             var twitterTrend = data.trends[i].name;
             var twitterTrendFirstChar = twitterTrend.charAt(0);
             if (twitterTrendFirstChar === "#") {
