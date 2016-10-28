@@ -26,9 +26,9 @@ function getQuote() {
 function getTrend() {
     var $trending = $("#twitter-section ul");
 
-    var trendURL = "http://api.whatthetrend.com/api/v2/trends.json"
+    var trendURL = "http://api.whatthetrend.com/api/v2/trends.json?woeid=23424977"
     $.getJSON(trendURL, function(data) {
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 9; i++) {
             var twitterTrend = data.trends[i].name;
             var twitterTrendFirstChar = twitterTrend.charAt(0);
             if (twitterTrendFirstChar === "#") {
