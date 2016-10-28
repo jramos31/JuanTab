@@ -11,8 +11,8 @@ JuanTab makes your ”new tab” page great again. JuanTab gives you an at a gla
 - Inspiration design quotes
 - Twitter trending topics
 
-**V 0.1.7:** Only Display USA Top Trends
-**V 0.1.6:** Make JuanTab your default tab
+**V 0.1.7:** Only Display USA Top Trends<br>
+**V 0.1.6:** Make JuanTab your default tab<br>
 **V 0.1.3:** Make JuanTab your default tab<br>
 **V 0.1.0:** Time, weather, Google search, design quotes, trending topics
 
