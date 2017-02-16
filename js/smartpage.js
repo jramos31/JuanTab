@@ -23,22 +23,34 @@ function getQuote() {
     });
 }
 
-function getTrend() {
-    var $trending = $("#twitter-section ul");
+// function getTrend() {
+//     var $trending = $("#twitter-section ul");
+//
+//     var trendURL = "http://api.whatthetrend.com/api/v2/trends.json?woeid=23424977"
+//     $.getJSON(trendURL, function(data) {
+//         for (var i = 0; i < 9; i++) {
+//             var twitterTrend = data.trends[i].name;
+//             var twitterTrendFirstChar = twitterTrend.charAt(0);
+//             if (twitterTrendFirstChar === "#") {
+//                 var twitterTrendWOFirstChar = twitterTrend.substring(1);
+//                 $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+twitterTrendWOFirstChar+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
+//             } else {
+//                 $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+data.trends[i].name+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
+//             }
+//         };
+//     })
+//     return false;
+// }
 
-    var trendURL = "http://api.whatthetrend.com/api/v2/trends.json?woeid=23424977"
-    $.getJSON(trendURL, function(data) {
-        for (var i = 0; i < 9; i++) {
-            var twitterTrend = data.trends[i].name;
-            var twitterTrendFirstChar = twitterTrend.charAt(0);
-            if (twitterTrendFirstChar === "#") {
-                var twitterTrendWOFirstChar = twitterTrend.substring(1);
-                $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+twitterTrendWOFirstChar+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
-            } else {
-                $trending.append('<li>' + '<a href="'+'https://twitter.com/search?q='+data.trends[i].name+'" target="_blank">'+data.trends[i].name+'</a>' + '</li>');
-            }
-        };
-    })
+function getArticles() {
+    var nytURL = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=762ed9f496c748da9c2d6df24dd8acae"
+    $.getJSON(nytURL, function(data) {
+        for (var i = 1; i < 6; i++) {
+            var nytArticles = data.results[i].title;
+            var nytLink = data.results[i].short_url;
+            $("#twitter-section ul").append('<li>' + '<a href="' + nytLink + '">' + data.results[i].title + '</a>' + '</li>');
+        }
+    });
     return false;
 }
 
@@ -111,6 +123,6 @@ $("#current-location").on("click", function() {
 $(document).ready(function() {
     startTime();
     getQuote();
-    getTrend();
+    getArticles();
     weatherCheck();
 });
