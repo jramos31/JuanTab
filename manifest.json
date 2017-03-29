@@ -1,15 +1,15 @@
 {
     "manifest_version": 2,
-    "name": "JuanTab",
-    "version": "0.1.9",
+    "name": "ritaTab",
+    "version": "0.2",
 
     "chrome_url_overrides": {
     "newtab": "index.html"
     },
 
     "browser_action": {
-        "default_icon": "img/favicon-32x32.png",
-        "default_title": "JuanTab"
+        "default_icon": "img/favicon.png",
+        "default_title": "ritaTab"
     },
 
     "content_scripts": [
